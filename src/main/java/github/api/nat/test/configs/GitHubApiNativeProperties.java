@@ -1,4 +1,4 @@
-package github.api.nat.test;
+package github.api.nat.test.configs;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

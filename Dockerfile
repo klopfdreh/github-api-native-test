@@ -6,10 +6,10 @@ ENV ARTIFACT_JAR_PATTERN=github-api-native-test-1.0.0-SNAPSHOT-exe.jar
 ENV MAIN_CLASS=github.api.nat.test.GitHubApiNativeTestApplication
 ENV BINARY_NAME=github-api-native-test
 
-ENV NIK_TAR_GZ=bellsoft-liberica-vm-openjdk17.0.10+13-23.0.3+1-linux-aarch64.tar.gz
-ENV NIK_DOWNLOAD_URL=https://github.com/bell-sw/LibericaNIK/releases/download/23.0.3%2B1-17.0.10%2B13/${NIK_TAR_GZ}
-ENV NIK_FOLDER=bellsoft-liberica-vm-openjdk17-23.0.3
-ENV NIK_CHECKSUM=b85c2ec281935b13679c7711d119c6ac65df6a38
+ENV NIK_TAR_GZ=bellsoft-liberica-vm-openjdk22.0.2+11-24.0.2+1-linux-aarch64.tar.gz
+ENV NIK_DOWNLOAD_URL=https://github.com/bell-sw/LibericaNIK/releases/download/24.0.2%2B1-22.0.2%2B11/${NIK_TAR_GZ}
+ENV NIK_FOLDER=bellsoft-liberica-vm-openjdk22-24.0.2
+ENV NIK_CHECKSUM=d3f49ff70061a1ae51f70514b7501481616adf75
 
 USER root
 
@@ -39,12 +39,13 @@ RUN jar -xvf ${ARTIFACT_JAR_PATTERN}
 RUN native-image \
 --initialize-at-build-time=`cat ./InitializeAtBuildTime | tr '\n' ','` \
 --initialize-at-run-time=`cat ./InitializeAtRunTime | tr '\n' ','` \
+-H:ReflectionConfigurationResources=META-INF/native-image/github-api-native-test-custom-definitions/reflect-config.json \
 --no-fallback \
 --enable-https \
---trace-class-initialization=io.netty.buffer.PooledByteBufAllocator,io.netty.buffer.UnpooledUnsafeDirectByteBuf,io.netty.buffer.UnpooledByteBufAllocator\$InstrumentedUnpooledUnsafeHeapByteBuf,io.netty.buffer.UnpooledHeapByteBuf,io.netty.handler.codec.http2.Http2CodecUtil,io.netty.buffer.ByteBufUtil,io.netty.buffer.UnpooledUnsafeHeapByteBuf,io.netty.buffer.UnpooledDirectByteBuf,io.netty.buffer.AbstractReferenceCountedByteBuf,io.netty.buffer.UnpooledByteBufAllocator\$InstrumentedUnpooledUnsafeDirectByteBuf \
 --install-exit-handlers \
--H:Name=${BINARY_NAME} \
--cp .:BOOT-INF/classes:`find BOOT-INF/lib | tr '\n' ':'` ${MAIN_CLASS}
+-H:+UnlockExperimentalVMOptions \
+-cp .:BOOT-INF/classes:`find BOOT-INF/lib | tr '\n' ':'` ${MAIN_CLASS} \
+-o ${BINARY_NAME}
 
 # Copy native image to destination
 RUN mkdir -p /native-image/

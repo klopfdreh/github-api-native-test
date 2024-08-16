@@ -1,0 +1,42 @@
+[
+  {
+    "name" : "org.kohsuke.github.GHRepository",
+    "allDeclaredClasses" : true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicClasses" : true,
+    "allPublicMethods": true,
+    "allPublicFields": true,
+    "allPublicConstructors": true,
+    "allRecordComponents": true,
+    "allNestedMembers": true,
+    "allSigners": true,
+    "allPermittedSubclasses": true,
+    "queryAllDeclaredMethods" : true,
+    "queryAllDeclaredConstructors" : true,
+    "queryAllPublicMethods" : true,
+    "queryAllPublicConstructors" : true,
+    "unsafeAllocated": true
+  },
+  {
+    "name" : "org.kohsuke.github.GHUser",
+    "allDeclaredClasses" : true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true,
+    "allPublicClasses" : true,
+    "allPublicMethods": true,
+    "allPublicFields": true,
+    "allPublicConstructors": true,
+    "allRecordComponents": true,
+    "allNestedMembers": true,
+    "allSigners": true,
+    "allPermittedSubclasses": true,
+    "queryAllDeclaredMethods" : true,
+    "queryAllDeclaredConstructors" : true,
+    "queryAllPublicMethods" : true,
+    "queryAllPublicConstructors" : true,
+    "unsafeAllocated": true
+  }
+]

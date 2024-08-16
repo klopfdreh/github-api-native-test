@@ -1,5 +1,6 @@
-package github.api.nat.test;
+package github.api.nat.test.components;
 
+import github.api.nat.test.configs.GitHubApiNativeProperties;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
