@@ -20,6 +20,9 @@
         <java.version>17</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
+
+        <annotations.version>3.0.1</annotations.version>
+        <github-api.version>1.323</github-api.version>
     </properties>
 
     <dependencies>
@@ -30,11 +33,16 @@
         <dependency>
             <groupId>org.kohsuke</groupId>
             <artifactId>github-api</artifactId>
-            <version>1.323</version>
+            <version>${github-api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${annotations.version}</version>
         </dependency>
     </dependencies>
 
