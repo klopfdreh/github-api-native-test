@@ -2,13 +2,16 @@ package github.api.nat.test;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.kohsuke.github.GHBranch;
+import org.kohsuke.github.GHContent;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 @Component
 @Slf4j
@@ -24,6 +27,8 @@ public class GitHubApiConnect {
         GitHub github = new GitHubBuilder().withPassword(gitHubApiNativeProperties.getUsername(), gitHubApiNativeProperties.getToken()).build();
         GHRepository repository = github.getRepository(gitHubApiNativeProperties.getRepository());
         GHBranch main = repository.getBranch("main");
-        log.debug(main.toString());
+        log.info(main.toString());
+        GHContent origin = repository.getFileContent("README.md", "main");
+        log.info(IOUtils.toString(origin.read(), Charset.defaultCharset()));
     }
 }
