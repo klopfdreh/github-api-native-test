@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>github-api-native-test</groupId>
-    <artifactId>github-api-netive-test</artifactId>
+    <artifactId>github-api-native-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>

@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @Data
 public class GitHubApiNativeProperties {
 
+    private String username;
+
     private String token;
 
     private String repository;
