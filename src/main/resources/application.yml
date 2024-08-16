@@ -1,0 +1,9 @@
+spring:
+  main:
+    web-application-type: none
+
+github:
+  api:
+    nat:
+      token: ${GITHUB_TOKEN:}
+      repository: "klopfdreh/github-api-native-test"
