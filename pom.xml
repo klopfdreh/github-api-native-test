@@ -23,6 +23,7 @@
 
         <annotations.version>3.0.1</annotations.version>
         <github-api.version>1.323</github-api.version>
+        <bridge-method-injector.version>1.24</bridge-method-injector.version>
     </properties>
 
     <dependencies>
@@ -43,6 +44,11 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>annotations</artifactId>
             <version>${annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.infradna.tool</groupId>
+            <artifactId>bridge-method-injector</artifactId>
+            <version>${bridge-method-injector.version}</version>
         </dependency>
     </dependencies>
 
