@@ -39,7 +39,6 @@ RUN jar -xvf ${ARTIFACT_JAR_PATTERN}
 RUN native-image \
 --initialize-at-build-time=`cat ./InitializeAtBuildTime | tr '\n' ','` \
 --initialize-at-run-time=`cat ./InitializeAtRunTime | tr '\n' ','` \
--H:ReflectionConfigurationResources=META-INF/native-image/github-api-native-test-custom-definitions/reflect-config.json \
 --no-fallback \
 --enable-https \
 --install-exit-handlers \

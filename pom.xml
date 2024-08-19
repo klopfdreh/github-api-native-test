@@ -50,6 +50,7 @@
             <artifactId>bridge-method-injector</artifactId>
             <version>${bridge-method-injector.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
